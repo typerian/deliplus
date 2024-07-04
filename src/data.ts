@@ -91,11 +91,47 @@ export const fullData = [
   { id: 19, nombre: "1/2 racion papas", precio: { dolar: 2.5, bolivar: 100 } },
   { id: 20, nombre: "salchipapas", precio: { dolar: 4, bolivar: 160 } },
   { id: 21, nombre: "glub 1lt", precio: { dolar: 1.25, bolivar: 50 } },
+  { id: 26, nombre: "pollo crispy", precio: { dolar: 6, bolivar: 240 } },
+  { id: 27, nombre: "cesar crunch", precio: { dolar: 6, bolivar: 240 } },
+  { id: 28, nombre: "ensalada cesar", precio: { dolar: 4.5, bolivar: 180 } },
   {
-    id: 24,
-    nombre: "4 hamburguesas especiales",
-    precio: { dolar: 10, bolivar: 400 },
+    id: 29,
+    nombre: "2 club houses (combo 4)",
+    precio: { dolar: 10, bolivar: 410 },
   },
-  { id: 25, nombre: "2 shawarmas", precio: { dolar: 10, bolivar: 400 } },
-  { id: 26, nombre: "2 club houses", precio: { dolar: 10, bolivar: 400 } },
+  {
+    id: 30,
+    nombre: "2 shawarmas (combo 2)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 31,
+    nombre: "4 hamburguesas especiales carne (combo 1)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 32,
+    nombre: "2 hamburguesas mixtas (combo 3)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 33,
+    nombre: "3 hamburguesas pollo crispy especial (combo 5)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 34,
+    nombre: "2 pepitos (combo 6)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 35,
+    nombre: "2 cesar crunch (combo 7)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 36,
+    nombre: "2 hamburguesas crispy especiales + papas fritas (combo 8)",
+    precio: { dolar: 10, bolivar: 410 },
+  },
 ];
