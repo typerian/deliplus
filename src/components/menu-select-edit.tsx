@@ -109,10 +109,12 @@ const SelectMenuEdit: FC<IdClientProps> = ({ orden }) => {
 
   return (
     <div className="h-screen flex flex-col justify-center scrollbar-hide overflow-y-scroll">
-      <div className="text-2xl mb-5 font-bold uppercase text-center mx-auto">
-        Gestor de Pedidos
-      </div>
-      <div className="flex justify-end mt-5">
+      <DialogClose asChild>
+        <Button type="button" className="" variant="outline">
+          Cerrar Gestor
+        </Button>
+      </DialogClose>
+      <div className="flex justify-end my-2">
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="outline">Eliminar Orden</Button>
@@ -130,14 +132,14 @@ const SelectMenuEdit: FC<IdClientProps> = ({ orden }) => {
         </Dialog>
       </div>
       <input
-        className="p-5 m-1 border border-blue-300 rounded-md"
+        className="p-5 border mb-2 border-blue-300 rounded-md"
         type="text"
         name="name"
         defaultValue={orden.name}
         onChange={handleChange}
         placeholder="Nombre"
       />
-      <div className="flex p-5 mx-1 relative border border-blue-300 rounded-md">
+      <div className="flex p-5 relative border border-blue-300 rounded-md">
         <div className="w-full">
           <div className="flex flex-col">
             <div className="">
@@ -259,13 +261,6 @@ const SelectMenuEdit: FC<IdClientProps> = ({ orden }) => {
           </button>
         </div>
       </div>
-      <input
-        className="mb-2 p-5 m-1 border border-blue-300 rounded-md"
-        type="text"
-        name="detalles"
-        onChange={handleChange}
-        placeholder="Detalles..."
-      />
       {pedidoList.length > 0 ? (
         <OrderPreselect
           handlePedido={handlePedido}
@@ -275,7 +270,7 @@ const SelectMenuEdit: FC<IdClientProps> = ({ orden }) => {
         />
       ) : null}
       <DialogClose asChild>
-        <Button type="button" variant="destructive">
+        <Button type="button" variant="outline">
           Cerrar
         </Button>
       </DialogClose>

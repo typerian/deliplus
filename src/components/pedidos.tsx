@@ -31,6 +31,15 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
   const [keyFilt, setKeyFill] = useState<string>("por pagar");
   const [ref, setRef] = useState<string>("");
 
+  const sumTotalDolar = pedidos.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.total[0],
+    0
+  );
+  const sumTotalBs = pedidos.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.total[1],
+    0
+  );
+
   let ordenes: PedidosParsedTypes[] = pedidos.map((items) => {
     return {
       ...items,
@@ -59,15 +68,6 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
       refs: [...prevPed?.refs, ref],
     });
   };
-
-  const sumTotalDolar = ordenes.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.total.sumDolar,
-    0
-  );
-  const sumTotalBs = ordenes.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.total.sumBs,
-    0
-  );
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, copy] = useCopyToClipboard();
@@ -320,9 +320,7 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
         )}
         {keyFilt === "pagado" && (
           <div className="mt-5 rounded-md bg-lime-800 text-white w-44 font-bold text-xl p-1 ml-auto text-center">
-            {`$ ${
-              sumTotalDolar ? sumTotalDolar : "tipo desconocido"
-            }  | Bs. ${sumTotalBs!}`}
+            {`$ ${sumTotalDolar} | Bs. ${sumTotalBs!}`}
           </div>
         )}
       </div>

@@ -107,17 +107,19 @@ const SelectMenu: FC<DateTypes> = ({ date }) => {
 
   return (
     <div className="h-screen flex flex-col justify-center scrollbar-hide overflow-y-scroll">
-      <div className="text-2xl mb-5 font-bold uppercase text-center mx-auto">
-        Gestor de Pedidos
-      </div>
+      <DialogClose asChild>
+        <Button type="button" className="" variant="outline">
+          Cerrar Gestor
+        </Button>
+      </DialogClose>
       <input
-        className="p-5 m-1 border border-blue-300 rounded-md"
+        className="p-5 border my-2 border-blue-300 rounded-md"
         type="text"
         name="name"
         onChange={handleChange}
         placeholder="Nombre"
       />
-      <div className="flex p-5 mx-1 relative border border-blue-300 rounded-md">
+      <div className="flex p-5 relative border border-blue-300 rounded-md">
         <div className="w-full">
           <div className="flex flex-col">
             <div className="">
@@ -164,7 +166,7 @@ const SelectMenu: FC<DateTypes> = ({ date }) => {
                   type="search"
                   value={searchParams}
                   onChange={handleChange}
-                  className="p-5 m-1 border w-10/12 border-blue-300 rounded-md"
+                  className="p-5 my-2 border w-10/12 border-blue-300 rounded-md"
                   placeholder="Buscar..."
                   name="item"
                 />
@@ -178,7 +180,7 @@ const SelectMenu: FC<DateTypes> = ({ date }) => {
                     setCantidad(1);
                     setSearchParams("");
                   }}
-                  className="cursor-pointer hover:bg-gray-200 justify-center flex items-center w-2/12 bg-gray-100 p-2 rounded"
+                  className="cursor-pointer hover:bg-gray-200 justify-center flex items-center w-2/12 bg-gray-100 rounded"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -249,7 +251,7 @@ const SelectMenu: FC<DateTypes> = ({ date }) => {
         />
       ) : null}
       <DialogClose asChild>
-        <Button type="button" variant="destructive">
+        <Button type="button" variant="secondary" className="mt-2">
           Cerrar
         </Button>
       </DialogClose>
