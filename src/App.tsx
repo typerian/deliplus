@@ -57,7 +57,7 @@ function App() {
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <Pedidos date={date?.toDateString()} pedidos={ordenes} />
+                    <Pedidos date={date?.toDateString()} pedidos={pedidos} />
                   </DialogHeader>
                 </DialogContent>
               </Dialog>

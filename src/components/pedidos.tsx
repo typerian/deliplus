@@ -31,14 +31,23 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
   const [keyFilt, setKeyFill] = useState<string>("por pagar");
   const [ref, setRef] = useState<string>("");
 
-  const sumTotalDolar = pedidos.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.total[0],
-    0
-  );
-  const sumTotalBs = pedidos.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.total[1],
-    0
-  );
+  const sumTotals = (currencyIndex: number) => {
+    return pedidos.reduce(
+      (accumulator, currentValue) =>
+        accumulator + currentValue.total[currencyIndex],
+      0
+    );
+  };
+
+  const sumTotalsPorPagar = (currencyIndex: number) => {
+    return pedidos
+      .filter((item) => item.pagado === false)
+      .reduce(
+        (accumulator, currentValue) =>
+          accumulator + currentValue.total[currencyIndex],
+        0
+      );
+  };
 
   let ordenes: PedidosParsedTypes[] = pedidos.map((items) => {
     return {
@@ -318,11 +327,12 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
         ) : (
           <h1>Sin ordenes</h1>
         )}
-        {keyFilt === "pagado" && (
-          <div className="mt-5 rounded-md bg-lime-800 text-white w-44 font-bold text-xl p-1 ml-auto text-center">
-            {`$ ${sumTotalDolar} | Bs. ${sumTotalBs!}`}
-          </div>
-        )}
+
+        <div className="mt-5 rounded-md bg-lime-800 text-white w-44 font-bold text-xl p-1 ml-auto text-center">
+          {keyFilt === "por pagar"
+            ? `$ ${sumTotalsPorPagar(0)} | Bs. ${sumTotalsPorPagar(1)}`
+            : `$ ${sumTotals(0)} | Bs. ${sumTotals(1)}`}
+        </div>
       </div>
     </>
   );
