@@ -91,9 +91,14 @@ export const fullData = [
   { id: 19, nombre: "1/2 racion papas", precio: { dolar: 2.5, bolivar: 100 } },
   { id: 20, nombre: "salchipapas", precio: { dolar: 4, bolivar: 160 } },
   { id: 21, nombre: "glub 1lt", precio: { dolar: 1.25, bolivar: 50 } },
-  { id: 26, nombre: "pollo crispy", precio: { dolar: 6, bolivar: 240 } },
+  { id: 26, nombre: "pollo a la canasta", precio: { dolar: 6, bolivar: 240 } },
   { id: 27, nombre: "cesar crunch", precio: { dolar: 6, bolivar: 240 } },
-  { id: 28, nombre: "ensalada cesar", precio: { dolar: 4.5, bolivar: 180 } },
+  { id: 28, nombre: "ensalada cesar", precio: { dolar: 3.5, bolivar: 140 } },
+  {
+    id: 28,
+    nombre: "ensalada cesar con pollo",
+    precio: { dolar: 4.5, bolivar: 140 },
+  },
   {
     id: 29,
     nombre: "2 club houses (combo 4)",
@@ -133,5 +138,20 @@ export const fullData = [
     id: 36,
     nombre: "2 hamburguesas crispy especiales + papas fritas (combo 8)",
     precio: { dolar: 10, bolivar: 410 },
+  },
+  {
+    id: 37,
+    nombre: "pepi cesar",
+    precio: { dolar: 7.5, bolivar: 308 },
+  },
+  {
+    id: 38,
+    nombre: "shawarma crispy",
+    precio: { dolar: 7.5, bolivar: 308 },
+  },
+  {
+    id: 39,
+    nombre: "club house cesar",
+    precio: { dolar: 7.5, bolivar: 308 },
   },
 ];
