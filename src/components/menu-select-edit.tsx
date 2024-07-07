@@ -79,7 +79,9 @@ const SelectMenuEdit: FC<IdClientProps> = ({ orden }) => {
 
     try {
       const parseListPed = pedidoList.map((pedido) => {
-        return `${pedido.item},${pedido.precio},${pedido.cantidad}`;
+        return `${pedido.item},,${JSON.stringify(pedido.precio)},,${
+          pedido.cantidad
+        }`;
       });
       await db.pedidos.update(orden.id, {
         ...currentPed,
