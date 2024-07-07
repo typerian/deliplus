@@ -83,7 +83,7 @@ const Pedidos: FC<PedidosDBTypes> = ({ pedidos }) => {
 
   const handleCopy = (orden: PedidosParsedTypes) => () => {
     let copyOrden = "";
-    copyOrden += `*Pedido*:\n$`;
+    copyOrden += `*Pedido*:\n`;
     orden.pedido.map((element) => {
       copyOrden += `${element.cantidad} x ${element.item} -- $${
         element.precio.dolar * element.cantidad
