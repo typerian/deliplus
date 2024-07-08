@@ -63,7 +63,7 @@ export const fullData = [
     precio: { dolar: 4, bolivar: 160 },
   },
   { id: 10, nombre: "hamburguesa mixta", precio: { dolar: 7, bolivar: 280 } },
-  { id: 10, nombre: "hamburguesa doble", precio: { dolar: 6, bolivar: 240 } },
+  { id: 40, nombre: "hamburguesa doble", precio: { dolar: 6, bolivar: 240 } },
   {
     id: 11,
     nombre: "hamburguesa clasica pollo",
@@ -90,7 +90,7 @@ export const fullData = [
   { id: 18, nombre: "racion papas", precio: { dolar: 4, bolivar: 160 } },
   { id: 19, nombre: "1/2 racion papas", precio: { dolar: 2.5, bolivar: 100 } },
   { id: 20, nombre: "salchipapas", precio: { dolar: 4, bolivar: 160 } },
-  { id: 21, nombre: "glub 1lt", precio: { dolar: 1.25, bolivar: 50 } },
+  { id: 21, nombre: "refresco", precio: { dolar: 1.25, bolivar: 50 } },
   { id: 26, nombre: "pollo a la canasta", precio: { dolar: 6, bolivar: 240 } },
   { id: 27, nombre: "cesar crunch", precio: { dolar: 6, bolivar: 240 } },
   { id: 28, nombre: "ensalada cesar", precio: { dolar: 3.5, bolivar: 140 } },
@@ -126,8 +126,8 @@ export const fullData = [
   },
   {
     id: 34,
-    nombre: "2 pepitos (combo 6)",
-    precio: { dolar: 10, bolivar: 410 },
+    nombre: "2 pepitos + refresco (combo 6)",
+    precio: { dolar: 12, bolivar: 492 },
   },
   {
     id: 35,
