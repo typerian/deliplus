@@ -10,10 +10,23 @@ import { db } from "./db";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Calendar } from "./components/ui/calendar";
 import { es } from "date-fns/locale";
-import React from "react";
+import React, { useEffect } from "react";
+
+interface ParaleloTypes {
+  change: number;
+  color: string;
+  image: string;
+  last_update: string;
+  percent: number;
+  price: number;
+  price_old: string;
+  symbol: string;
+  title: string;
+}
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [paralelo, setParalelo] = React.useState<ParaleloTypes | null>(null);
 
   //fetching de todos los pedidos en funcion de la fecha en el calendario
   const pedidos = useLiveQuery(
@@ -22,6 +35,18 @@ function App() {
       await db.pedidos.where("fecha").equals(date?.toDateString()!).toArray(),
     [date]
   );
+
+  useEffect(() => {
+    fetch(
+      "https://pydolarvenezuela-api.vercel.app/api/v1/dollar?monitor=enparalelovzla"
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setParalelo(data);
+      });
+  }, []);
 
   const pedidosCount = useLiveQuery(() => db.pedidos.count());
 
@@ -47,6 +72,9 @@ function App() {
               />
             </DialogContent>
           </Dialog>
+          {paralelo !== null && (
+            <div className="p-3 text-2xl">{paralelo?.price}</div>
+          )}
         </div>
         <div className="flex flex-col md:flex-row w-full h-full justify-evenly items-center">
           <div className="relative rounded-xl text-2xl fond-bold bg-green-300">
